@@ -40,4 +40,3 @@ jobs:
             This PR merges changes from `pre-release` to `release`.
           base: release
           branch: pre-release
-          template: .github/PULL_REQUEST_RELEASE_TEMPLATE.md.erb
