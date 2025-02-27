@@ -1,8 +1,6 @@
 name: Release Automation
 
 on:
-  schedule:
-    - cron: '0 12 * * 2'  # 毎週火曜の12:00に実行
   workflow_dispatch:  # 手動でのトリガーも可能
 
 jobs:
