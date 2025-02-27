@@ -19,13 +19,17 @@ jobs:
           git config --global user.email "actions@github.com"
           git checkout master
           git pull origin master
+          
+          # 既存の pre-release ブランチがあるか確認
           if git show-ref --verify --quiet refs/heads/pre-release; then
             git checkout pre-release
-            git pull origin pre-release
+            git pull origin pre-release  # 既存のブランチを更新
           else
             git checkout -b pre-release
           fi
-          git push origin pre-release
+          
+          # 変更をリモートにプッシュ
+          git push origin pre-release --force  # --forceを使用して強制的にプッシュ
 
       - name: Create Pull Request for release
         uses: peter-evans/create-pull-request@v3
